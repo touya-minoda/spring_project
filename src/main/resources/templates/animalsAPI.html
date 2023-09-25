@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>動物一覧</title>
+	<meta charset="utf-8" />
+</head>
+
+<body>
+	<h1>動物一覧</h1>
+	<form action="animalsResult" method="get">
+		<select name="id">
+			<option value="1">イヌ</option>
+			<option value="2">ネコ</option>
+			<option value="3">レッサーパンダ</option>
+			<option value="4">ライオン</option>
+			<option value="5">ラッコ</option>
+			<option value="6">ブタ</option>
+		</select>
+		<input type="submit">		
+	</form>
+	<ul>
+		<li th:each="animal : ${animalsList}">
+			<p th:text="No： + ${animal.id}"></p>
+			<p th:text="英名： + ${animal.name}"></p>
+			<p th:text="和名： + ${animal.japaneseName}"></p>
+			<p th:text="鳴き声： + ${animal.cry}"></p>
+		</li>
+	</ul>
+</body>
