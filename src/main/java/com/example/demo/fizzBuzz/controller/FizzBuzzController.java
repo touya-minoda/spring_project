@@ -1,6 +1,7 @@
 package com.example.demo.fizzBuzz.controller;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,7 +21,7 @@ public class FizzBuzzController {
 	@GetMapping("fizzbuzz")
 	public String multi(Model model) {
 		//ArrayListでresultリストを作成
-		ArrayList<String> result = new ArrayList<String>();
+		List<String> result = new ArrayList<String>();
 		// サービスクラスから結果をresultに格納
 		result = fizzBuzzService.fizzBuzz();
 		//resultの値をビューに渡す
