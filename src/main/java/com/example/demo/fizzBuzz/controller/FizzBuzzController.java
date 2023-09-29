@@ -20,7 +20,7 @@ public class FizzBuzzController {
 	
 	@GetMapping("fizzbuzz")
 	public String multi(Model model) {
-		//ArrayListでresultリストを作成
+		//Listでresultリストを作成
 		List<String> result = new ArrayList<String>();
 		// サービスクラスから結果をresultに格納
 		result = fizzBuzzService.fizzBuzz();

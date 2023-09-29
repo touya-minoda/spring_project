@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 public class FizzBuzzService {
 
 	public List<String> fizzBuzz() {
-		//ArrayListでリストを作成
+		//Listでリストを作成
 		List<String> lists = new ArrayList<String>();
 		
 		for(int i = 0; i <= 100; i++) {
