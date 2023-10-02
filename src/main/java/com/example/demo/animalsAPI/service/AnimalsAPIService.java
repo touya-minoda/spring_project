@@ -18,17 +18,13 @@ public class AnimalsAPIService {
 		this.animalsAPIRepository = animalsAPIRepository;
 	}
 
-	public Animals getAnimals(int id) throws IOException {
+	public List<Animals> getAnimals(int id) throws IOException {
 
-		Animals[] animalsList = animalsAPIRepository.getAnimals();
+		Animals[] animalsList = animalsAPIRepository.getAnimals(id);
 		
 		List<Animals> resultList = Arrays.asList(animalsList);
 		
-		id--;
-		
-		Animals result  = resultList.get(id);
-		
-		return result;
+		return resultList;
 
 	}
 }

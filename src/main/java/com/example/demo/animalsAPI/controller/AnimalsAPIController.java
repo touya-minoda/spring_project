@@ -1,6 +1,7 @@
 package com.example.demo.animalsAPI.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,7 +27,7 @@ public class AnimalsAPIController {
 	
 	@GetMapping("animalsResult")
 	public String getPets(@RequestParam("id") int id, Model model) throws IOException {
-		Animals result = animalsAPIService.getAnimals(id);
+		List<Animals> result = animalsAPIService.getAnimals(id);
 		
 		model.addAttribute("animalsList", result);
 		return "animalsAPI.html";
