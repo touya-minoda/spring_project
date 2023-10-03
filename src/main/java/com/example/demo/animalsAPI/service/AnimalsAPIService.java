@@ -28,11 +28,11 @@ public class AnimalsAPIService {
 	
 	public List<Animals> getAnimals(int id) throws IOException {
 
-		Animals[] animalsList = animalsAPIRepository.getAnimals(id);
+		Animals[] getAnimals = animalsAPIRepository.getAnimals(id);
 		
-		List<Animals> resultList = Arrays.asList(animalsList);
+		List<Animals> animalsList = Arrays.asList(getAnimals);
 		
-		return resultList;
+		return animalsList;
 
 	}
 }
