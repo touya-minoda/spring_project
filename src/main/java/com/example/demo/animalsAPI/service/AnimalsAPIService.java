@@ -17,7 +17,15 @@ public class AnimalsAPIService {
 	public AnimalsAPIService(AnimalsAPIRepository animalsAPIRepository) {
 		this.animalsAPIRepository = animalsAPIRepository;
 	}
-
+	
+	public List<Animals> getAllAnimals() throws IOException {
+		Animals[] animalsAll = animalsAPIRepository.getAllAnimals();
+		
+		List<Animals> animalsAllList = Arrays.asList(animalsAll);
+		
+		return animalsAllList;
+	}
+	
 	public List<Animals> getAnimals(int id) throws IOException {
 
 		Animals[] animalsList = animalsAPIRepository.getAnimals(id);

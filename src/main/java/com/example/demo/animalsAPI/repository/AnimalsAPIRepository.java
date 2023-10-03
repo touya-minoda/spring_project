@@ -12,14 +12,31 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Repository
 public class AnimalsAPIRepository {
-
+	
+	public Animals[] getAllAnimals() throws IOException {
+		
+		String url = "https://jsn9xu2vsk.execute-api.ap-northeast-1.amazonaws.com/sample/sampleapi";
+		
+		RestTemplate rest = new RestTemplate();
+		
+		ResponseEntity<String> response = rest.exchange(url, HttpMethod.GET, null, String.class);
+		
+		String json = response.getBody();
+		
+		ObjectMapper mapper = new ObjectMapper();
+		
+		Animals[] animalsAll = mapper.readValue(json, Animals[].class);
+		
+		return animalsAll;
+	}
+	
 	public Animals[] getAnimals(int id) throws IOException {
 
 		String url = "https://jsn9xu2vsk.execute-api.ap-northeast-1.amazonaws.com/sample/sampleapi?id={id}";
 
 		RestTemplate rest = new RestTemplate();
 
-		ResponseEntity<String> response = rest.exchange(url, HttpMethod.GET, null,  String.class, id);
+		ResponseEntity<String> response = rest.exchange(url, HttpMethod.GET, null, String.class, id);
 
 		String json = response.getBody();
 
